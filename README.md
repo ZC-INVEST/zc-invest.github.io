@@ -1,4 +1,4 @@
-## C INVEST is a dynamic consulting firm specializing in Finance, Fintech & Banking Strategy. We transform complex financial challenges into sustainable growth opportunities by offering tailored, innovative solutions that enable our clients to thrive in an ever-evolving market.
+## ZC INVEST is a dynamic consulting firm specializing in Finance, Fintech & Banking Strategy. We transform complex financial challenges into sustainable growth opportunities by offering tailored, innovative solutions that enable our clients to thrive in an ever-evolving market.
 
 Our Vision:
 We believe in a client-centric approach that blends deep financial expertise with technological innovation and strategic guidance. Our goal is simple: empower organizations to achieve enduring success and adapt seamlessly to the future of finance.
