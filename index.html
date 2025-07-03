@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZC INVEST - Contact Sécurisé</title>
+<style>
+    body { font-family: Arial; margin: 0; padding: 20px; background: #f9f9f9; animation: fadeIn 1s ease-in; }
+    header { background: #003366; color: white; padding: 20px; text-align: center; }
+    section { background: white; margin: 20px auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 900px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h2 { color: #003366; }
+    label, input, textarea, button { display: block; width: 100%; margin-top: 10px; }
+    button { background: #003366; color: white; padding: 10px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+    button:hover { background: #0055aa; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ZC INVEST</h1>
+  <p>You're in good hands – Formulaire sécurisé HTTPS</p>
+</header>
+
+<section>
+  <h2>Contactez-nous</h2>
+  <form action="https://formspree.io/f/mayvlvzn" method="POST">
+    <label>Nom :</label><input type="text" name="Nom" required>
+    <label>Email :</label><input type="email" name="Email" required>
+    <label>Votre message :</label><textarea name="Message" rows="4" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+</body>
+</html>
