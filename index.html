@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZC INVEST - Conseil Financier & Digital</title>
+<style>
+    body { font-family: 'Open Sans', sans-serif; margin:0; background:white; color:#0a3d62;
+           background: url('https://images.unsplash.com/photo-1603570410048-2fc07ef348d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+           background-size: cover;}
+    .content, header, footer { background: rgba(255,255,255,0.9); border-radius:10px; }
+    header { color:white; padding:20px; text-align:center; background: rgba(10,61,98,0.9); }
+    header img { max-width:150px; display:block; margin:10px auto; }
+    nav { text-align:center; margin:30px 0; }
+    nav button { background:#0a3d62; color:white; border:none; padding:12px 25px; margin:5px; border-radius:6px; cursor:pointer; font-size:1em; transition:background 0.3s; }
+    nav button:hover { background:#c9a74f; }
+    .content { max-width:800px; margin:20px auto; padding:20px; }
+    .panel { display:none; background:#f8f9fa; border-radius:8px; padding:20px; margin-top:20px; animation: fadeIn 1s forwards; }
+    input, textarea { width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px; }
+    button.submit { background:#0a3d62; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
+    button.submit:hover { background:#c9a74f; }
+    footer { background:#0a3d62; color:white; text-align:center; padding:15px; margin-top:40px; }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+</style>
+<script>
+    function showPanel(id) {
+        var panels = document.getElementsByClassName('panel');
+        for(var i=0;i<panels.length;i++){ panels[i].style.display='none'; }
+        document.getElementById(id).style.display='block';
+        window.scrollTo(0, document.getElementById(id).offsetTop - 20);
+    }
+</script>
+</head>
+<body>
+
+<header>
+    <img src="logo-zcinvest.jpg" alt="ZC INVEST Logo"/>
+    <h1>ZC INVEST</h1>
+    <p>Finance • Transformation Digitale • Stratégie</p>
+</header>
+
+<nav>
+    <button onclick="showPanel('finance')">Ingénierie Financière</button>
+    <button onclick="showPanel('entreprise')">Finance d'Entreprise</button>
+    <button onclick="showPanel('digital')">Transformation Digitale</button>
+    <button onclick="showPanel('strategie')">Management & Stratégie</button>
+    <button onclick="showPanel('contact')">Contact</button>
+</nav>
+
+<div class="content">
+    <div id="finance" class="panel">
+        <h3>Ingénierie Financière</h3>
+        <p>Structuration avancée de financements, optimisation des cash-flows, gestion des risques.</p>
+        <form action="mailto:contact.zcinvest@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nom & Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Décrivez votre besoin" rows="4" required></textarea>
+            <button type="submit" class="submit">Demander un rendez-vous</button>
+        </form>
+    </div>
+    <div id="entreprise" class="panel">
+        <h3>Finance d'Entreprise</h3>
+        <p>Accompagnement stratégique, indicateurs de performance, plans financiers sur mesure.</p>
+        <form action="mailto:contact.zcinvest@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nom & Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Décrivez votre besoin" rows="4" required></textarea>
+            <button type="submit" class="submit">Demander un rendez-vous</button>
+        </form>
+    </div>
+    <div id="digital" class="panel">
+        <h3>Transformation Digitale</h3>
+        <p>Audit digital, déploiement CRM/ERP, automatisation via IA & data analytics.</p>
+        <form action="mailto:contact.zcinvest@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nom & Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Décrivez votre besoin" rows="4" required></textarea>
+            <button type="submit" class="submit">Demander un rendez-vous</button>
+        </form>
+    </div>
+    <div id="strategie" class="panel">
+        <h3>Management & Stratégie</h3>
+        <p>Conception et pilotage des feuilles de route stratégiques, conduite du changement.</p>
+        <form action="mailto:contact.zcinvest@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nom & Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Décrivez votre besoin" rows="4" required></textarea>
+            <button type="submit" class="submit">Demander un rendez-vous</button>
+        </form>
+    </div>
+    <div id="contact" class="panel">
+        <h3>Contactez-nous</h3>
+        <p>Email : contact.zcinvest@gmail.com<br>Tél : +216 97 273 200</p>
+        <form action="mailto:contact.zcinvest@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nom & Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
+            <button type="submit" class="submit">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 ZC INVEST | contact.zcinvest@gmail.com | +216 97 273 200</p>
+</footer>
+
+</body>
+</html>
