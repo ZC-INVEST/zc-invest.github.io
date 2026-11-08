@@ -1,0 +1,74 @@
+:root { --bg:#0e1014; --card:#161920; --line:#242833; --txt:#e6e7ea; --mut:#8b919d; --up:#22c55e; --down:#ef4444; --neu:#eab308; --acc:#d4af37; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--txt); }
+  header { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid var(--line); }
+  h1 { font-size:17px; margin:0; color:var(--acc); }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--mut); margin:0 0 10px; font-weight:600; }
+  .status { font-size:12px; color:var(--mut); display:flex; align-items:center; gap:6px; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--down); }
+  .dot.on { background:var(--up); box-shadow:0 0 6px var(--up); }
+  .spacer { flex:1; }
+  button, select { background:#20242d; color:var(--txt); border:1px solid #323745; border-radius:6px; padding:5px 10px; font:inherit; cursor:pointer; }
+  button:hover { border-color:var(--acc); }
+  main { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:14px; padding:14px 18px; }
+  @media (max-width:1100px){ main { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; }
+  .stack { display:flex; flex-direction:column; gap:14px; min-width:0; }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; font-size:13px; color:var(--mut); align-items:center; }
+  table { width:100%; border-collapse:collapse; }
+  th { text-align:left; font-size:11px; color:var(--mut); font-weight:600; padding:6px 6px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td { padding:7px 6px; border-bottom:1px solid var(--line); white-space:nowrap; font-variant-numeric:tabular-nums; }
+  tbody tr { cursor:pointer; }
+  tbody tr:hover { background:#1c2029; }
+  tr.sel { background:#232836 !important; }
+  .tbl-wrap { overflow-x:auto; max-height:420px; overflow-y:auto; }
+  .buy { color:var(--up); font-weight:700; } .sell { color:var(--down); font-weight:700; }
+  .bar { width:60px; height:6px; background:#2a2f3a; border-radius:3px; display:inline-block; vertical-align:middle; margin-right:6px; overflow:hidden; }
+  .bar > i { display:block; height:100%; }
+  .muted { color:var(--mut); }
+  .empty { color:var(--mut); padding:18px 6px; text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:10px; }
+  .pair { background:#1b1f27; border:1px solid var(--line); border-radius:8px; padding:10px; cursor:pointer; }
+  .pair:hover { border-color:#3a4050; }
+  .pair .sym { font-weight:700; }
+  .pair .px { font-size:18px; font-weight:700; font-variant-numeric:tabular-nums; transition:color .3s; }
+  .pair .tfs { display:flex; gap:6px; margin-top:6px; font-size:11px; flex-wrap:wrap; }
+  .chip { padding:1px 6px; border-radius:4px; background:#262b35; }
+  .chip.up { background:rgba(34,197,94,.15); color:var(--up); } .chip.down { background:rgba(239,68,68,.15); color:var(--down); }
+  .flash-up { color:var(--up) !important; } .flash-down { color:var(--down) !important; }
+  .chart-head { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+  .chart-head .t { font-size:16px; font-weight:700; margin-right:auto; }
+  #chart { height:360px; } #rsiChart { height:110px; margin-top:6px; }
+  .detail { font-size:13px; margin-top:10px; }
+  .detail .levels { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:8px 0; }
+  .detail .levels div { background:#1b1f27; border-radius:6px; padding:6px; text-align:center; }
+  .detail .levels b { display:block; font-variant-numeric:tabular-nums; }
+  .detail ul { margin:6px 0 0; padding-left:18px; color:var(--mut); }
+  #feed { max-height:220px; overflow-y:auto; font-size:13px; }
+  #feed div { padding:6px 0; border-bottom:1px solid var(--line); }
+  .disclaimer { font-size:11px; color:var(--mut); padding:0 18px 16px; }
+  .toast { position:fixed; right:16px; bottom:16px; background:#1f2430; border:1px solid var(--acc); border-radius:8px; padding:10px 14px; max-width:320px; box-shadow:0 6px 24px #0008; animation:fade 6s forwards; }
+  @keyframes fade { 0%,85% { opacity:1 } 100% { opacity:0 } }
+
+/* ---------- Marque ZC INVEST ---------- */
+.brand { display:flex; align-items:center; gap:8px; color:var(--txt); text-decoration:none; font-weight:800; letter-spacing:.06em; font-size:13px; padding-right:12px; border-right:1px solid var(--line); }
+.brand img { border-radius:4px; background:#fff; }
+[hidden] { display:none !important; }
+
+/* ---------- Connexion ---------- */
+.login-screen { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px;
+  background:radial-gradient(ellipse at top, #1b2030 0%, var(--bg) 60%); }
+.login-card { width:100%; max-width:380px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:28px; display:flex; flex-direction:column; box-shadow:0 20px 60px #0007; }
+.login-brand { display:flex; align-items:center; gap:10px; color:var(--txt); text-decoration:none; font-weight:800; letter-spacing:.08em; margin-bottom:18px; }
+.login-brand img { border-radius:6px; background:#fff; }
+.login-card h1 { font-size:22px; margin:0 0 4px; color:var(--acc); }
+.login-card .muted { margin:0 0 18px; font-size:13px; }
+.login-card label { font-size:12px; color:var(--mut); margin:10px 0 4px; font-weight:600; }
+.login-card input { background:#0f1218; color:var(--txt); border:1px solid #323745; border-radius:6px; padding:10px 12px; font:inherit; }
+.login-card input:focus { outline:2px solid var(--acc); outline-offset:1px; border-color:transparent; }
+.login-err { color:var(--down); font-size:13px; min-height:18px; margin:10px 0 4px; }
+.btn-primary { background:var(--acc); color:#16130a; border:0; font-weight:700; padding:11px; border-radius:6px; }
+.btn-primary:hover { filter:brightness(1.08); }
+.btn-primary:disabled { opacity:.6; cursor:wait; }
+.back-link { color:var(--mut); font-size:12px; text-align:center; margin-top:16px; text-decoration:none; }
+.back-link:hover { color:var(--txt); }

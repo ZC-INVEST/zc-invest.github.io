@@ -1,0 +1,33 @@
+# Blueprint Render : déploie le serveur du scanner (dossier scanner-server/)
+services:
+  - type: web
+    name: zc-scanner
+    runtime: node
+    rootDir: scanner-server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: TWELVEDATA_API_KEY
+        sync: false          # à saisir dans Render
+      - key: USERS
+        sync: false          # comptes membres (voir scanner-server/README.md)
+      - key: AUTH_SECRET
+        generateValue: true  # Render génère un secret aléatoire
+      - key: ALLOWED_ORIGIN
+        value: https://www.zcinvest.co.uk,https://zcinvest.co.uk,https://zc-invest.github.io
+      - key: SYMBOLS
+        value: EUR/USD,GBP/USD,USD/JPY,XAU/USD
+      - key: TIMEFRAMES
+        value: 15min,1h,4h
+      - key: USE_WEBSOCKET
+        value: "false"
+      - key: CREDITS_PER_MIN
+        value: "8"
+      - key: DAILY_CREDITS
+        value: "800"
+      - key: ALERT_MIN_SCORE
+        value: "60"
+      - key: SESSION_HOURS
+        value: "12"

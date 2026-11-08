@@ -5,7 +5,31 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-Frame-Options: DENY
+
+# Politique de sécurité du site vitrine (inchangée), appliquée page par page :
+# Netlify additionne les en-têtes de toutes les règles qui correspondent, une CSP
+# globale sur /* bloquerait donc aussi l'espace membres.
+/
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-eSNqOPzj7TYNgz8x+RbhAX2tOXvkovBBLXkQRqCdQCM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+/index.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-eSNqOPzj7TYNgz8x+RbhAX2tOXvkovBBLXkQRqCdQCM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+/privacy.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-eSNqOPzj7TYNgz8x+RbhAX2tOXvkovBBLXkQRqCdQCM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+/404.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-eSNqOPzj7TYNgz8x+RbhAX2tOXvkovBBLXkQRqCdQCM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+# Espace membres — scanner forex : scripts locaux uniquement, connexion au seul serveur du scanner
+/scanner/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.onrender.com https://*.up.railway.app; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-cache
+
+# Code source du serveur : jamais indexé
+/scanner-server/*
+  X-Robots-Tag: noindex, nofollow
 
 /assets/*
   Cache-Control: public, max-age=604800
