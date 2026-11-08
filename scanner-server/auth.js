@@ -14,7 +14,9 @@ if (!SECRET) {
 }
 
 const users = new Map();
-for (const entry of (process.env.USERS || "").split(",").map((s) => s.trim()).filter(Boolean)) {
+// tolère les copier-coller imparfaits : guillemets, espaces, retours à la ligne
+const rawUsers = (process.env.USERS || "").replace(/["'\s]/g, "");
+for (const entry of rawUsers.split(",").filter(Boolean)) {
   const [name, algo, salt, hash] = entry.split(":");
   if (algo !== "scrypt" || !salt || !hash) { console.error(`❌ Compte mal formé ignoré : ${name}`); continue; }
   users.set(name.toLowerCase(), { name, salt, hash });
