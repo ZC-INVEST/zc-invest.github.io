@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /scanner/
+Disallow: /scanner-server/
 
 Sitemap: https://www.zcinvest.co.uk/sitemap.xml

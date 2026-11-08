@@ -1,0 +1,9 @@
+{
+  "name": "forex-scanner",
+  "version": "1.0.0",
+  "description": "Scanner forex temps réel (relais Twelve Data)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" }
+}

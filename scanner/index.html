@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Scanner Forex — Espace membres ZC INVEST</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="style.css">
+<script src="vendor/lightweight-charts.standalone.production.js" defer></script>
+<script src="config.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<!-- ======== Écran de connexion ======== -->
+<div id="loginScreen" class="login-screen">
+  <form id="loginForm" class="login-card" autocomplete="on">
+    <a href="/" class="login-brand"><img src="/favicon.png" alt="" width="40" height="40"><span>ZC INVEST</span></a>
+    <h1>Espace membres</h1>
+    <p class="muted">Scanner Forex en temps réel. Accès réservé aux membres.</p>
+    <label for="lUser">Identifiant</label>
+    <input id="lUser" name="username" autocomplete="username" required>
+    <label for="lPass">Mot de passe</label>
+    <input id="lPass" name="password" type="password" autocomplete="current-password" required>
+    <p id="loginErr" class="login-err" role="alert"></p>
+    <button type="submit" id="loginBtn" class="btn-primary">Se connecter</button>
+    <a href="/" class="back-link">← Retour au site ZC INVEST</a>
+  </form>
+</div>
+
+<!-- ======== Application ======== -->
+<div id="app" hidden>
+<header>
+  <a href="/" class="brand"><img src="/favicon.png" alt="" width="30" height="30"><span>ZC INVEST</span></a>
+  <h1>Scanner Forex</h1>
+  <span class="status"><span class="dot" id="dot"></span><span id="statusTxt">Connexion…</span></span>
+  <span class="status" id="modeTxt"></span>
+  <span class="spacer"></span>
+  <button id="alertBtn">🔔 Activer les alertes</button>
+  <span class="status" id="userTxt"></span>
+  <button id="logoutBtn">Déconnexion</button>
+</header>
+
+<main>
+  <div class="stack">
+    <section class="card">
+      <h2>Opportunités détectées</h2>
+      <div class="filters">
+        Score min
+        <select id="fScore"><option value="0">Tous</option><option value="50">50+</option><option value="60" selected>60+</option><option value="70">70+</option><option value="80">80+</option></select>
+        Sens
+        <select id="fDir"><option value="">Tous</option><option value="achat">Achat</option><option value="vente">Vente</option></select>
+        Unité
+        <select id="fTf"><option value="">Toutes</option></select>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Paire</th><th>UT</th><th>Sens</th><th>Configuration</th><th>Score</th><th>Entrée</th><th>Stop</th><th>Objectif 2R</th><th title="Nombre de bougies depuis le signal">Âge</th></tr></thead>
+          <tbody id="oppBody"><tr><td colspan="9" class="empty">Chargement des données…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Vue du marché</h2>
+      <div class="grid" id="pairsGrid"></div>
+    </section>
+  </div>
+
+  <div class="stack">
+    <section class="card">
+      <div class="chart-head">
+        <span class="t" id="chartTitle">—</span>
+        <select id="cSym"></select>
+        <select id="cTf"></select>
+      </div>
+      <div id="chart"></div>
+      <div id="rsiChart"></div>
+      <div class="detail" id="detail"><span class="muted">Clique sur une opportunité pour voir l'entrée, le stop et les objectifs sur le graphique.</span></div>
+    </section>
+
+    <section class="card">
+      <h2>Journal des détections</h2>
+      <div id="feed"><div class="muted">Aucune détection pour l'instant.</div></div>
+    </section>
+  </div>
+</main>
+<p class="disclaimer">ZC INVEST LTD — outil d'analyse technique automatique, réservé aux membres et fourni à titre informatif. Les signaux ne constituent pas un conseil en investissement ; le trading sur le forex comporte un risque élevé de perte en capital.</p>
+</div>
+</body>
+</html>
